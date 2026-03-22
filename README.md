@@ -14,13 +14,16 @@
 
 ## 📖 目录
 
- [游戏特色](#-游戏特色)  
- [操作说明](#-操作说明)  
- [游戏截图](#-游戏截图)  
- [快速开始](#-快速开始)  
- [技术栈](#-技术栈)  
- [项目结构](#-项目结构)  
- [许可证](#-许可证)  
+ [✨ 游戏特色](#-游戏特色)  
+ [🎮 操作说明](#-操作说明)  
+ [📷 游戏截图](#-游戏截图)  
+ [🚀 快速开始](#-快速开始)  
+   [环境要求](#环境要求)  
+   [编译与运行](#编译与运行)  
+ [🛠️ 技术栈](#-技术栈)  
+ [📁 项目结构](#-项目结构)  
+ [📜 许可证](#-许可证)  
+ [🙏 致谢](#-致谢)  
 
 ---
 
@@ -103,15 +106,31 @@
 
    按 F5 编译并运行游戏
 
-### 技术栈
+---
 
-| 类别 | 功能 |
-| :--- | :--- |
-| 语言 | C++17 |
-| 图形库 | SFML 2.6.1 |
-| 开发环境 | Visual Studio 2022 |
-| 资源格式 | PNG 序列帧 / 静态图片 |
-| 版本控制 | Git & GitHub |
+## 🛠️ 技术栈
+
+[![C++](https://img.shields.io/badge/C%2B%2B-17-blue.svg?style=flat-square)](https://isocpp.org/)
+[![SFML](https://img.shields.io/badge/SFML-2.6.1-green.svg?style=flat-square)](https://www.sfml-dev.org/)
+[![Visual Studio](https://img.shields.io/badge/VS-2022-purple.svg?style=flat-square)](https://visualstudio.microsoft.com/)
+[![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
+
+### 核心技术
+
+- **语言**：C++17
+  - 使用面向对象编程（OOP）
+  - STL容器管理游戏对象
+  - 智能指针管理资源
+
+- **图形渲染**：SFML 2.6.1
+  - 2D图形渲染
+  - 动画序列帧播放
+  - 粒子特效系统
+
+- **开发工具**
+  - Visual Studio 2022
+  - Git 版本控制
+  - GitHub 代码托管
 
 ---
 
@@ -160,4 +179,17 @@ SurvivalGameDemo/
 你可以自由地使用、修改、分发本项目，但需保留原始版权声明。
 
 ---
+
+## 🙏 致谢
+
+* **[SFML](https://www.sfml-dev.org/)** —— 简单易用的多媒体库，为游戏提供图形、窗口和输入支持
+* **Visual Studio 2022** —— 强大的 C++ 开发环境
+* **所有开源社区** —— 提供了宝贵的学习资源和灵感
+* **每一位试玩的朋友** —— 你们的反馈让游戏变得更好
+
+---
+
+⭐ 如果喜欢这个项目，欢迎给个 Star 支持一下！
+
+
 
