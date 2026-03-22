@@ -1,11 +1,17 @@
-# SurvivalGameDemo
+<div align="center">
+  
+# **SurvivalGameDemo**
+  
+## *2D生存游戏 | 塔防 + 射击混合*
 
-## 2D生存游戏 | 塔防 + 射击混合
+![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?style=flat-square&logo=c%2B%2B)
+![SFML](https://img.shields.io/badge/SFML-2.6.1-8CC445?style=flat-square&logo=sfml)
+![Visual Studio](https://img.shields.io/badge/VS-2022-5C2D91?style=flat-square&logo=visual-studio)
 
-[![GitHub stars](https://img.shields.io/github/stars/L7uxuan/SurvivalGameDemo.svg?style=flat-square)](https://github.com/L7uxuan/SurvivalGameDemo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/L7uxuan/SurvivalGameDemo.svg?style=flat-square)](https://github.com/L7uxuan/SurvivalGameDemo/network)
-[![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg?style=flat-square)](https://isocpp.org/)
-[![SFML](https://img.shields.io/badge/SFML-2.6.1-green.svg?style=flat-square)](https://www.sfml-dev.org/)
+[![Star](https://img.shields.io/github/stars/L7uxuan/SurvivalGameDemo?style=social)](https://github.com/L7uxuan/SurvivalGameDemo/stargazers)
+[![Fork](https://img.shields.io/github/forks/L7uxuan/SurvivalGameDemo?style=social)](https://github.com/L7uxuan/SurvivalGameDemo/network)
+
+</div>
 
 > 一款融合了塔防与射击玩法的2D生存游戏  
 > 控制步枪手，建造防御塔，在敌人潮中保护水晶核心
@@ -18,8 +24,6 @@
  [🎮 操作说明](#-操作说明)  
  [📷 游戏截图](#-游戏截图)  
  [🚀 快速开始](#-快速开始)  
-   [环境要求](#环境要求)  
-   [编译与运行](#编译与运行)  
  [🛠️ 技术栈](#-技术栈)  
  [📁 项目结构](#-项目结构)  
  [📜 许可证](#-许可证)  
@@ -190,6 +194,3 @@ SurvivalGameDemo/
 ---
 
 ⭐ 如果喜欢这个项目，欢迎给个 Star 支持一下！
-
-
-
