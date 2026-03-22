@@ -1,62 +1,60 @@
-<!-- 顶部徽章区域 -->
-<div align="center">
+# SurvivalGameDemo
 
-  <!-- 项目Logo/标题区域 -->
-  <img src="https://img.shields.io/badge/C++-17-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++17">
-  <img src="https://img.shields.io/badge/SFML-2.6.1-8CC445?style=for-the-badge&logo=sfml&logoColor=white" alt="SFML 2.6.1">
-  <img src="https://img.shields.io/badge/VS-2022-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="VS2022">
-  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+## 2D生存游戏 | 塔防 + 射击混合
 
-  <h1>🎮 生存游戏 - 守护水晶</h1>
-  <p><strong>使用 C++17 与 SFML 开发的 2D 俯视角生存射击游戏</strong></p>
+[![GitHub stars](https://img.shields.io/github/stars/L7uxuan/SurvivalGameDemo.svg?style=flat-square)](https://github.com/L7uxuan/SurvivalGameDemo/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/L7uxuan/SurvivalGameDemo.svg?style=flat-square)](https://github.com/L7uxuan/SurvivalGameDemo/network)
+[![Language](https://img.shields.io/badge/C%2B%2B-17-blue.svg?style=flat-square)](https://isocpp.org/)
+[![SFML](https://img.shields.io/badge/SFML-2.6.1-green.svg?style=flat-square)](https://www.sfml-dev.org/)
 
-  <!-- 演示GIF占位 - 替换为你的实际游戏截图 -->
-  <img src="docs/gameplay.gif" alt="游戏演示" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
-  <p><i>🎬 将游戏录屏或截图放入 <code>docs/</code> 文件夹替换此占位图</i></p>
-
-  <br>
-
-  <!-- 快速链接 -->
-  <a href="#-功能特性">功能特性</a> •
-  <a href="#-快速开始">快速开始</a> •
-  <a href="#-游戏操作">游戏操作</a> •
-  <a href="#-项目结构">项目结构</a> •
-  <a href="#-技术栈">技术栈</a>
-
-</div>
+> 一款融合了塔防与射击玩法的2D生存游戏  
+> 控制步枪手，建造防御塔，在敌人潮中保护水晶核心
 
 ---
 
-## ✨ 功能特性
+## 📖 目录
 
-<table>
-<tr>
-<td width="50%">
+- [游戏特色](#-游戏特色)
+- [操作说明](#-操作说明)
+- [游戏截图](#-游戏截图)
+- [快速开始](#-快速开始)
+- [技术栈](#-技术栈)
+- [项目结构](#-项目结构)
+- [许可证](#-许可证)
 
-### 🎯 核心玩法
-- **三波敌人攻势**：15 → 25 → 500，难度指数级递增
-- **双类型敌人系统**：
-  - 💗 **粉色近战兵**：高速追击，贴身攻击
-  - ❤️ **红色自爆兵**：范围爆炸，群体伤害
-- **智能仇恨机制**：攻击者成为敌人优先目标（支持玩家与防御塔）
+---
 
-</td>
-<td width="50%">
+## ✨ 游戏特色
 
-### 🏗️ 策略系统
-- **防御塔建造**：消耗 30 能量（蓝条）建造自动攻击塔
-- **塔防协同**：防御塔拥有独立血条，可被敌人摧毁
-- **子弹反弹系统**：玩家与防御塔子弹可弹射 2 次，提升战术深度
-- **能量管理**：建造与技能消耗资源，考验决策时机
+ **混合玩法** —— 塔防 + 射击双核机制，策略与操作并重  
+ **智能仇恨系统** —— 谁攻击敌人，敌人就会优先追击谁  
+ **子弹反弹** —— 所有子弹碰到屏幕边缘可反弹，且最多反弹2次  
+ **防御塔系统** —— 消耗能量建造自动攻击的防御塔，射速5发/秒  
+ **复活机制** —— 玩家死亡3秒后在起点复活，清除仇恨  
+ **波次预告** —— 每波来袭前屏幕中央显示预告，间隔5秒  
+ **血包掉落** —— 敌人有5%几率掉落血包  
+ **丰富特效** —— 近战挥砍、冲刺拖尾、伤害数字、血条系统  
 
-</td>
-</tr>
-</table>
+---
 
-### 📖 完整游戏流程
-主菜单 → 角色选择 → 姓名输入 → 剧情引导 → 三波战斗 → 胜利/失败 → 返回菜单
-plain
-复制
+## 🎮 操作说明
+
+| 按键 | 功能 |
+| :--- | :--- |
+| `WASD` | 移动角色 |
+| 鼠标左键 | 射击 |
+| 鼠标右键 | 冲刺 |
+| `X` | 建造防御塔/30能量 |
+| `␣` 空格 | 暂停游戏 |
+| `↵` 回车 | 推进剧情 |
+
+---
+
+## 📷 游戏截图
+
+| 主菜单 | 剧情界面 | 游戏界面 |
+| :---: | :---: | :---: |
+| ![主菜单](screenshot1.png) | ![剧情界面](screenshot2.png) | ![游戏界面](screenshot3.png) |
 
 ---
 
@@ -64,102 +62,25 @@ plain
 
 ### 环境要求
 
-| 项目 | 要求 |
-|:---:|:---|
-| **操作系统** | Windows 7 及以上 |
-| **编译器** | Visual Studio 2022（或支持 C++17 的编译器）|
-| **依赖库** | SFML 2.6.1（已包含在项目中）|
+ **操作系统**：Windows 10 / 11  
+ **开发工具**：Visual Studio 2022  
+ **图形库**：SFML 2.6.1  
+ **编译器**：支持 C++17  
 
-### 安装步骤
+### 编译与运行
 
-#### 1️⃣ 克隆仓库
-```bash```
-git clone https://github.com/你的用户名/survival-game.git
-cd survival-game
-#### 2️⃣ 打开项目
-```bash```
-# 使用 Visual Studio 2022 打开解决方案
-SurvivalGame.sln
-#### 3️⃣ 配置与编译
-确保项目配置为 Release x64
-按 Ctrl + Shift + B 编译
-#### 4️⃣ 运行游戏
-按 F5 启动游戏
-⚠️ 提示：如果缺少 SFML 的 .dll 文件，请从 SFML 官网 下载，并将 bin 目录下的 sfml-*.dll 复制到生成目录（如 x64/Release/）。
-🎮 游戏操作
-### 操作指南
+1. **克隆仓库**
 
-| 按键 | 功能说明 | 备注 |
+   ```bash
+   git clone https://github.com/L7uxuan/SurvivalGameDemo.git
+2.**打开项目**
 
-|:---:|:---|:---|
+用 Visual Studio 2022 打开 SurvivalGame.sln
 
-| W A S D | 角色移动 | 八方向移动 |
+3.**配置 SFML**
 
-| 鼠标左键 | 射击/攻击 | 步枪手专用 |
+确保 SFML 2.6.1 的 include 和 lib 路径已正确配置
 
-| 鼠标右键 | 冲锋位移 | 短暂无敌，可穿怪 |
+4.**编译运行**
 
-| X | 建造防御塔 | 消耗30能量，有建造CD |
-
-| 空格 | 暂停游戏 | 可查看当前状态 |
-
-| Enter | 确认/继续 | 剧情推进、返回菜单 |
-🛠️ 技术栈
-<div align="center">
-表格
-类别	技术
-编程语言	C++17
-图形/音频/窗口	SFML 2.6.1 (Graphics, Window, Audio, System)
-开发环境	Visual Studio 2022
-版本控制	Git
-</div>
-📂 项目结构
-plain
-复制
-SurvivalGame/
-├── 📁 assets/                  # 游戏资源文件
-│   ├── background.png         # 游戏战斗背景
-│   ├── menu_bg.png            # 主菜单背景
-│   ├── story_bg.png           # 剧情界面背景
-│   ├── tower.png              # 防御塔贴图
-│   ├── crystal.png            # 核心水晶贴图
-│   ├── 📁 Rifleman/           # 玩家角色动画 (12帧 × 4方向)
-│   ├── 📁 landmaster/         # 近战敌人动画 (18帧)
-│   └── 📁 flyingmaster/       # 自爆敌人动画 (18帧)
-├── 📁 src/                     # 源代码 (.h 头文件 与 .cpp 实现)
-├── 📁 docs/                    # 文档与演示素材
-├── SurvivalGame.sln           # Visual Studio 解决方案
-└── README.md                  # 本文件 (项目说明)
-📸 截图展示
-<div align="center">
-<!-- 在这里添加游戏截图，建议尺寸 800x450 -->
-<img src="docs/screenshot1.png" alt="战斗画面" width="400">
-<img src="docs/screenshot2.png" alt="菜单界面" width="400">
-<p><i>📷 将截图放入 <code>docs/</code> 文件夹并更新上方路径</i></p>
-</div>
-📝 更新日志
-表格
-日期	版本	更新内容
-2025.03	v1.0	完成核心玩法：三波敌人、防御塔系统、子弹反弹机制
-2025.03	v1.1	新增完整 UI 流程：主菜单、剧情引导、姓名输入系统
-2025.03	v1.2	优化敌人 AI 与仇恨系统，提升战斗流畅度
-2025.03	v1.3	添加背景贴图与视觉特效，增强游戏表现力
-🤝 贡献指南
-欢迎提交 Issue 和 Pull Request！如果您想贡献代码，请遵循以下步骤：
-Fork 本仓库
-创建您的特性分支 (git checkout -b feature/AmazingFeature)
-提交您的修改 (git commit -m 'Add some AmazingFeature')
-推送到分支 (git push origin feature/AmazingFeature)
-打开一个 Pull Request
-📜 许可证
-本项目基于 MIT License 开源。您可以自由使用、修改和分发，但请保留原始许可证声明。
-🙏 致谢
-SFML - 简洁高效的 C++ 多媒体库
-游戏动画素材由本人绘制或来源于 OpenGameArt
-感谢 CSDN 和 Stack Overflow 开发社区的技术分享
-<div align="center">
-⭐ 如果这个项目对您有帮助，欢迎点亮 Star 支持！
-https://github.com/你的用户名/survival-game/stargazers
-Made with ❤️ and C++
-</div>
-```
+按 F5 编译并运行游戏
