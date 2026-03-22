@@ -83,29 +83,6 @@
 
 ---
 
-## 📦 直接下载（免编译）
-
-[![Download](https://img.shields.io/badge/⬇️_下载游戏-最新版本-brightgreen?style=for-the-badge&logo=github)](https://github.com/L7uxuan/SurvivalGameDemo/releases/latest)
-
-**无需安装Visual Studio和SFML，解压即玩！**
-
-### 系统要求
-- Windows 10 / 11
-- 屏幕分辨率 1280×720 以上
-
-### 下载步骤
-1. 点击上方按钮，下载 `SurvivalGame_v1.0.zip`
-2. 解压到任意文件夹
-3. 双击 `SurvivalGame.exe` 开始游戏
-
----
-
-## 🚀 从源码编译
-
-如需修改或学习源码，请参考以下步骤...
-
----
-
 ## 🚀 快速开始
 
 ### 环境要求
