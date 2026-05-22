@@ -132,7 +132,8 @@ int main() {
     const float waveDelay[3] = { 5.f,5.f,5.f };
     bool waveActive = false, waveStarting = false;
     float waveStartTimer = 0, waveGenTimer = 0;
-    bool paused = false, playerDead = false;
+    volatile bool paused = false;  // 关键：使用 volatile 防止 Release 模式优化
+    bool playerDead = false;
     float reviveTime = 3.f;
     bool playerInvincible = false;
     const float playerInvincibleTime = 0.3f;
@@ -236,30 +237,35 @@ int main() {
                     dialogueIdx = 0; dialogue.setString(dialogueLines[0]); state = State::DIALOGUE;
                 }
             }
-            if (state == State::PLAYING && !paused) {
-                if (e.type == sf::Event::MouseMoved) player.setMouse(win.mapPixelToCoords({ e.mouseMove.x, e.mouseMove.y }));
-                if (e.type == sf::Event::MouseButtonPressed) {
-                    if (e.mouseButton.button == sf::Mouse::Left && !playerDead) {
-                        player.setFaceMouse(true);
-                        bullets.emplace_back(player.getCenter(), win.mapPixelToCoords({ e.mouseButton.x, e.mouseButton.y }), false, player.getAtk(), true);
-                    }
-                    else if (e.mouseButton.button == sf::Mouse::Right && !playerDead) {
-                        player.setFaceMouse(true);
-                        sf::Vector2f dir = player.getMouse() - player.getPos();
-                        float len = std::hypot(dir.x, dir.y);
-                        if (len > 0) dir /= len;
-                        sf::Vector2f newPos = player.getPos() + dir * 200.f;
-                        newPos.x = clamp(newPos.x, 0.f, 770.f);
-                        newPos.y = clamp(newPos.y, 0.f, 570.f);
-                        player.setPos(newPos);
-                        for (int i = 0; i < 10; i++)
-                            trails.emplace_back(player.getPos() - dir * static_cast<float>(i) * 20.f);
-                    }
+            if (state == State::PLAYING) {
+                if (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Space) {
+                    paused = !paused;  // 切换暂停状态
+                    std::cout << (paused ? "游戏暂停" : "游戏继续") << std::endl;
                 }
-                if (e.type == sf::Event::MouseButtonReleased && e.mouseButton.button == sf::Mouse::Left) player.setFaceMouse(false);
-                if (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::X && !playerDead && player.useEnergy(30))
-                    towers.emplace_back(player.getPos().x, player.getPos().y);
-                if (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Space) paused = !paused;
+                if (!paused) {
+                    if (e.type == sf::Event::MouseMoved) player.setMouse(win.mapPixelToCoords({ e.mouseMove.x, e.mouseMove.y }));
+                    if (e.type == sf::Event::MouseButtonPressed) {
+                        if (e.mouseButton.button == sf::Mouse::Left && !playerDead) {
+                            player.setFaceMouse(true);
+                            bullets.emplace_back(player.getCenter(), win.mapPixelToCoords({ e.mouseButton.x, e.mouseButton.y }), false, player.getAtk(), true);
+                        }
+                        else if (e.mouseButton.button == sf::Mouse::Right && !playerDead) {
+                            player.setFaceMouse(true);
+                            sf::Vector2f dir = player.getMouse() - player.getPos();
+                            float len = std::hypot(dir.x, dir.y);
+                            if (len > 0) dir /= len;
+                            sf::Vector2f newPos = player.getPos() + dir * 200.f;
+                            newPos.x = clamp(newPos.x, 0.f, 770.f);
+                            newPos.y = clamp(newPos.y, 0.f, 570.f);
+                            player.setPos(newPos);
+                            for (int i = 0; i < 10; i++)
+                                trails.emplace_back(player.getPos() - dir * static_cast<float>(i) * 20.f);
+                        }
+                    }
+                    if (e.type == sf::Event::MouseButtonReleased && e.mouseButton.button == sf::Mouse::Left) player.setFaceMouse(false);
+                    if (e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::X && !playerDead && player.useEnergy(30))
+                        towers.emplace_back(player.getPos().x, player.getPos().y);
+                }
             }
             if ((state == State::GAME_OVER || state == State::WIN) && e.type == sf::Event::KeyPressed && e.key.code == sf::Keyboard::Enter) {
                 state = State::MENU;
@@ -325,7 +331,6 @@ int main() {
                     b.bounce(normal);
                     b.setPosition(clamp(b.getPosition().x, 1.f, 798.f), clamp(b.getPosition().y, 1.f, 598.f));
                 }
-                // 只有敌人子弹才会与塔和水晶碰撞
                 if (b.isEnemy()) {
                     for (auto& t : towers) {
                         if (!t.isActive()) continue;

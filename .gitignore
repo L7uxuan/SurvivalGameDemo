@@ -6,3 +6,8 @@ Release/
 *.ilk
 *.pdb
 *.exe
+*.user
+*.log
+*.tlog
+*.idb
+*.recipe
