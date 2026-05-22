@@ -76,6 +76,7 @@ SurvivalGame/
 ├── Enemy.h/cpp       # AI、仇恨系统
 ├── Bullet.h          # 反弹、碰撞、伤害
 ├── Tower.h           # 自动索敌
+├── HealthPack.h      # 血包掉落
 ├── Crystal.h         # 水晶核心
 ├── DamageNumber.h    # 伤害数字特效
 ├── TrailParticle.h   # 冲刺拖尾粒子
